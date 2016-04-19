@@ -1,0 +1,53 @@
+{
+  "name": "Base-Web",
+  "version": "0.0.1",
+  "description": "SENSORO Base-web",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "copy-dir": "0.0.8",
+    "cz-conventional-changelog": "^1.1.5",
+    "gulp": "^3.9.0",
+    "gulp-copy": "0.0.2",
+    "gulp-csso": "^1.0.1",
+    "gulp-filter": "^3.0.1",
+    "gulp-flatten": "^0.2.0",
+    "gulp-jscs": "^1.6.0",
+    "gulp-jshint": "^1.11.0",
+    "gulp-minify-css": "^0.3.13",
+    "gulp-minify-html": "^1.0.3",
+    "gulp-remove-files": "0.0.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev": "^6.0.1",
+    "gulp-rev-all": "^0.8.22",
+    "gulp-uglify": "^0.3.2",
+    "gulp-usemin": "^0.3.20",
+    "gulp-useref": "^3.0.4",
+    "rimraf": "^2.3.4",
+    "underscore": "^1.8.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node_modules/.bin/gulp",
+    "build": "node_modules/.bin/gulp build",
+    "jshint": "node_modules/.bin/gulp jshint",
+    "i18n": "node_modules/.bin/gulp i18n",
+    "html": "node_modules/.bin/gulp hbuild",
+    "release": "node_modules/.bin/gulp release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sensoro/Manage-Web.git"
+  },
+  "author": "liuxiaodong <liuxiaodong1989@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sensoro/Manage-Web/issues"
+  },
+  "homepage": "https://github.com/Sensoro/Manage-Web",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
