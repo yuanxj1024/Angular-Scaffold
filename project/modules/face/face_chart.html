@@ -1,0 +1,83 @@
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3"><a class="btn btn-default" ui-sref="cloud.appstore.face"><i class="fa fa-chevron-left"></i> 返回</a> 颜值评测数据报表</h1>
+</div>
+<div class="hbox">
+    <div class="col">
+        <div class="wrapper">
+            <page-todaydata params-obj="paramsObj"></page-todaydata>
+            <page-reportdata params-obj="paramsObj"></page-reportdata>
+            <page-visitdata params-obj="paramsObj"></page-visitdata>
+
+            <div class="panel panel-default" ng-if="isAdminControl">
+                <div class="panel-heading">
+                    刷脸记录
+                </div>
+                <div class="row wrapper">
+                    <div class="col-sm-10 form-inline">
+                        <label class="control-label m-r-sm">刷脸结果</label>
+                        <div class="form-group">
+                            <div style="max-width:500px;">
+                                <div class="btn-group dropdown" dropdown="">
+                                    <a class="btn btn-default dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
+                                    <span ng-if="!faceParams.status">全部</span>
+                                    <span ng-if="faceParams.status === 'tried'">未中奖</span>
+                                    <span ng-if="faceParams.status === 'shot'">已中奖</span>
+                                    <span ng-if="faceParams.status === 'token'">已领取</span>
+                                    <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a ng-click="faceParams.status = ''">全部</a></li>
+                                        <li><a ng-click="faceParams.status = 'tried'">未中奖</a></li>
+                                        <li><a ng-click="faceParams.status = 'shot'">已中奖</a></li>
+                                        <li><a ng-click="faceParams.status = 'token'">已领取</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <label class="control-label m-r-sm" style="margin-left: 15px;">最小颜值</label>
+                        <div class="form-group">
+                            <input type="number" class="form-control" ng-model="faceParams.minPercent" placeholder="0 到 100"></input>
+                        </div>
+                        <label class="control-label m-r-sm" style="margin-left: 15px;">最大颜值</label>
+                        <div class="form-group">
+                            <input type="number" class="form-control" ng-model="faceParams.maxPercent" placeholder="0 到 100"></input>
+                        </div>                        
+                        <div class="form-group">
+                            <button type="button" class="btn btn-danger" ng-click="getFaceLogs()">查询</button>
+                        </div>
+                    </div>
+                </div>                
+                <div class="table-responsive">
+                    <table class="table table-striped m-b-none" ui-jq="footable" data-filter="#filter" data-page-size="5">
+                        <thead>
+                            <tr>
+                                <th>头像</th>
+                                <th>昵称</th>
+                                <th>图片</th>
+                                <th>颜值</th> 
+                                <th>刷脸时间</th>
+                            </tr>
+                        </thead>
+                        <tbody so-progress="faceProgress">
+                            <tr ng-repeat="f in faceLogs">
+                                <td>
+                                    <span class="thumb-xs avatar m-t-n-sm m-b-n-sm m-l-sm">
+                                      <img src="{{f.avatar}}" alt="...">
+                                    </span>
+                                </td>
+                                <td>{{f.nickname}}</td>
+                                <td>
+                                    <span class="m-t-n-sm m-b-n-sm m-l-sm">
+                                      <img src="{{f.portrait}}" alt="..." style="max-width: 200px;max-height: 200px;">
+                                    </span>
+                                </td>
+                                <td>{{f.percent}}</td>
+                                <td>{{f.createdTime | timeToLocal:'YYYY/MM/DD HH:mm'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <paging page="facePage" page-size="pageSize" total="faceLogsTotal" paging-action="getFaceLogs(page)" show-prev-next="true" adjacent="2" dots="..." hide-if-empty="true" ul-class=" pagination pagination-sm m-t-lg m-l"></paging>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>

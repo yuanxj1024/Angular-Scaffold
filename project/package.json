@@ -1,7 +1,7 @@
 {
-  "name": "Base-Web",
+  "name": "Angular-Scaffold",
   "version": "0.0.1",
-  "description": "SENSORO Base-web",
+  "description": "Angular Demo Project",
   "main": "index.html",
   "dependencies": {},
   "devDependencies": {
@@ -37,14 +37,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Sensoro/Manage-Web.git"
+    "url": ""
   },
-  "author": "liuxiaodong <liuxiaodong1989@gmail.com>",
+  "author": "YuanXuJia <xuanyuanziruo@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Sensoro/Manage-Web/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/Sensoro/Manage-Web",
+  "homepage": "",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"

@@ -1,0 +1,384 @@
+
+<div class="bg-light lter b-b wrapper-md ng-scope">
+  <h1 class="m-n font-thin h3"><a ui-sref="cloud.appstore.face" href="/cloud/appstore/face" class="btn btn-default"><i class="fa fa-chevron-left"></i> 返回</a> 颜值测试</h1>
+</div> 
+<div class="hbox" id="face_create">
+  <div class="col w-xl bg-light dk b-r bg-auto" >
+    <div class="wrapper">
+      <extend-control></extend-control>
+      <div class="faceplusPreview">
+        <article class="page">
+          <header>
+            <div xd="bg_clientLogo" class="logo shopInfoLogo" style="background-image:url({{event.shopInfo.logo}})"></div>
+            <hgroup style="max-width: 150px;overflow:auto">
+              <h1 style="white-space:nowrap" xd="clientName">{{event.shopInfo.name || "商家名称"}}</h1>
+              <h2 style="white-space:nowrap" xd="clientEvent">{{event.shopInfo.des || "活动描述"}}</h2>
+            </hgroup>
+            <div class="people"><i xd="eventPv">{{event.pv}}</i>&nbsp;人<br>正在参加</div>
+          </header>
+          <section class="faceCon">
+            <div class="rahmen">
+              <div class="photoCtn portrait" style="background-image:url({{event.portrait}})">
+              </div>
+              <div class="des">
+                <div xd="bg_avatar" class="avatar" style="background-image:url({{event.avatar}})"></div>
+                <p xd="successTxt">
+                  <!-- <mark>用户</mark>的颜值击败了<mark>多少</mark>用户获得
+                  <mark>礼品</mark>一张! -->
+                  {{event.des || "默认描述"}}
+                </p>
+              </div>
+              <p class="fail disnone">你的颜值太高了，我们不敢说结果<br>换一张照片试试吧!</p>
+              <button class="stepBtn disnone"></button>
+              <p xd="eventTips" class="activityTips disnone">注意：每日限领卡券一张，领取卡券后当天不能再参加活动。<br>对奖品不满意的小伙伴可以再试一次。</p>
+            </div>
+            <button type="button" class="funBtn" ><img src="http://7u2jeb.com1.z0.glb.clouddn.com/41728d06779435f642744a89e2fdeb1c.png"/>
+              <p>上传我的照片</p>
+            </button>
+          </section>
+          <footer>
+            <p>© 2015 云子X实验室出品</p>
+            <p> <a href="tel:400-686-3180">400-686-3180</a>&nbsp;|&nbsp;<a href="http://www.sensoro.com"> www.sensoro.com</a></p>
+          </footer>          
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="wrapper">
+      <ul class="timeline">
+        <form name="eventForm" style="" class="form-horizontal form-validation">
+          <li class="tl-header">
+            <div class="btn btn-info">创建流程</div>
+          </li>
+          <li class="tl-item">
+            <div class="tl-wrap b-primary"><span class="tl-date">第一步</span>
+              <div class="tl-content panel padder b-a block">
+                <div class="panel-heading"><strong>基本信息</strong></div>
+                <div class="panel-body">
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">商户图标</label>
+                    <div class="col-sm-6">
+                      <div class="inline bg-white wrapper-sm b-a shopInfoLogo">
+                        <div class="bg-light">
+                          <img ngf-src="event.shopInfo.logo" style="width:50px;">
+                        </div>
+                      </div>
+                      <div class="inline m-b m-l">
+                        <div ngf-select="" ng-model="shopInfoLogo" class="btn btn-default">选择文件</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">活动名称</label>
+                    <div class="col-sm-6">
+                      <div class="input-group w-md">
+                        <input type="text" class="form-control" name="name" ng-model="event.name" required ng-change="charLenError.nameMinFlag = !minLength(event.name, 18, true)"/>
+                        <span class="character-count">
+                          {{characterCount(event.name)}}/9
+                        </span>
+                      </div>
+                      <tt ng-if="charLenError.nameMinFlag" class="input-error">活动名称不能为空且不能超过9中文个字符</tt>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">商户名称</label>
+                    <div class="col-sm-6">
+                      <div class="input-group w-md">
+                        <input type="text" name="shopName" ng-model="event.shopInfo.name" required="" class="form-control" ng-change="charLenError.shopNameMinLenFlag = !minLength(event.shopInfo.name, 18, true)"/>
+                        <span class="character-count">
+                          {{characterCount(event.shopInfo.name)}}/9
+                        </span>                        
+                      </div>
+                      <tt ng-if="charLenError.shopNameMinLenFlag" class="input-error">商户名称不能为空且不能超过9中文个字符</tt>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">活动描述</label>
+                    <div class="col-sm-6">
+                      <div class="input-group w-md">
+                        <input type="text" name="shopDes" ng-model="event.shopInfo.des" required="" class="form-control" ng-change="charLenError.shopDesMinLenFlag = !minLength(event.shopInfo.des, 28, true)"/>
+                        <span class="character-count">
+                          {{characterCount(event.shopInfo.des)}}/14
+                        </span>
+                      </div>
+                      <tt ng-if="charLenError.shopDesMinLenFlag" class="input-error">活动描述不能为空且不能超过14中文个字符</tt>
+                    </div>
+                  </div>
+                  <div class="line line-dashed b-b line-lg pull-in"></div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">活动参与人数</label>
+                    <div class="col-sm-6">
+                      <input type="number" placeholder="" step="1" min="0" ng-model="event.target" required="" value="0" style="" class="form-control w-md"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">开始日期</label>
+                    <div class="col-sm-6">
+                      <div class="input-group w-md">
+                        <input type="text" so-max-date="event.endTime" ng-model="event.beginTime" so-dtpicker="event.beginTime" so-time-format="Y-m-d" required="required" class="begin-dtpicker form-control" readonly="true"/>
+                        <span ng-click="dateOptions.open('.begin-dtpicker')" class="input-group-btn">
+                          <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">结束日期</label>
+                    <div class="col-sm-6 ng-scope">
+                      <div class="input-group w-md">
+                        <input type="text" ng-model="event.endTime" so-dtpicker="event.endTime" so-time-format="Y-m-d" so-min-date="event.beginTime" required="required" class="end-dtpicker form-control" readonly="true"/>
+                        <span ng-click="dateOptions.open('.end-dtpicker')" class="input-group-btn">
+                          <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label"></label>
+                    <div class="col-sm-6"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="tl-item">
+            <div class="tl-wrap b-primary"><span class="tl-date">第二步</span>
+              <div class="tl-content panel padder b-a block">
+                <div class="panel-heading"><strong>页面样式</strong></div>
+                <div class="panel-body">
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">默认图片</label>
+                    <div class="col-sm-6">
+                      <div class="inline bg-white wrapper-sm b-a portrait">
+                        <img ngf-src="event.portrait" style="width:100px;">
+                      </div>
+                      <div class="inline m-b m-l">
+                        <div ngf-select="" ng-model="portrait" class="btn btn-default">选择文件</div>
+                      </div>
+                      <p>推荐尺寸 460x460 像素 </p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">默认头像</label>
+                    <div class="col-sm-6">
+                      <div class="inline bg-white wrapper-sm b-a avatar">
+                        <div class="bg-light">
+                          <img ngf-src="event.avatar" style="width:50px;">
+                        </div>
+                      </div>
+                      <div class="inline m-b m-l">
+                        <div ngf-select="" ng-model="avatar" class="btn btn-default">选择文件</div>
+
+                      </div>
+                      <p>推荐尺寸 100x100 像素 </p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">默认文字</label>
+                    <div class="col-sm-6">
+                      <input type="text" placeholder="" ng-model="event.des" required="" class="form-control w-md"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="tl-item">
+            <div class="tl-wrap b-primary">
+              <span class="tl-date">第三步</span>
+              <card-select-list card-id-list="cardIds" page-title="奖品设置" button-title="绑定卡券" bind-cards-callback="getSelectCardsInfo($data)"></card-select-list>
+            </div>
+          </li>
+          <li class="tl-item">
+            <div class="tl-wrap b-primary"><span class="tl-date">第四步</span>
+              <div class="tl-content panel padder b-a block">
+                <div class="panel-heading">
+                  <a href="#" ng-click="addSettings()" class="btn btn-primary fa fa-plus pull-right"> 添加规则</a>
+                  <strong>中奖逻辑</strong>
+                  <div style="margin-top: 5px;">
+                    <dfn style="display: block;">* 文案中可以使用以下定义内容代表对应的信息</dfn>
+                    <dfn style="display: block;">例子：您的好友{user}颜值打败了{rate}%的用户，并抽中了一张{card}卡券</dfn>
+                  </div>
+                  <div class="explain" style="margin-top: 5px;">
+                    <dfn style="margin: 0 10px 0 0px;">卡券名称： {card}</dfn>
+                    <dfn style="margin: 0 10px 0 10px;">用户名称： {user}</dfn>
+                    <dfn style="margin: 0 10px 0 10px;">刷脸颜值： {rate}</dfn>
+                    <dfn style="margin: 0 10px 0 10px;">刷脸囧值： {-rate}</dfn>
+                    <dfn style="margin: 0 10px 0 10px;color: #ec6432;">标记颜色： &lt;mark&gt;你的文案&lt;/mark&gt;</dfn>
+                  </div>
+                </div>
+                <div class="panel-body">
+                  <div class="table-responsive">
+                    <table style="font-size:13px;" class="table table-condensed ruleSetting">
+                      <thead>
+                        <tr>
+                          <th class="col-sm-1" style="min-width:80px;">性别</th>
+                          <th class="col-sm-1" style="min-width:140px;">颜值大于</th>
+                          <th class="col-sm-1" style="min-width:140px;">颜值小等于</th>
+                          <th class="col-sm-2" style="min-width:180px;">卡劵</th>
+                          <th class="col-sm-3" style="min-width:200px;">文案</th>
+                          <th class="col-sm-3" style="min-width:200px;">好友文案</th>
+                          <th class="col-sm-1" style="min-width:100px;">操作</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- ngRepeat: setting in lotterySettings-->
+                        <tr ng-repeat="setting in event.lotterySettings" class="ng-scope lotterySetting">
+                          <td>
+                            <div class="input-group dropdown" dropdown="">
+                              <a class="form-control dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="false" style="width: 60px;">
+                                <span>{{setting.gender === 'male' ? '男' : '女'}}</span>
+                                <b class="caret" style="float: right;margin-top: 8px;"></b>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li ng-class="{active: setting.gender === 'male'}" ng-click="setting.gender = 'male'">
+                                  <a>男</a>
+                                </li>
+                                <li ng-class="{active: setting.gender === 'female'}" ng-click="setting.gender = 'female'">
+                                  <a>女</a>
+                                </li>                                
+                              </ul>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="input-group">
+                              <input type="number" step="1" max="100" min="0" required="" ng-model="setting.from" class="form-control settingFrom"/><span class="input-group-addon">%</span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="input-group">
+                              <input type="number" step="1" max="100" min="0" required="" ng-model="setting.to" class="form-control settingTo"/><span class="input-group-addon">%</span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="input-group dropdown" dropdown="">
+                                <a class="form-control dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="false" style="width: 160px;">
+                                  <span>{{getCardInfoById(setting.cardId).base_info.title || '不使用卡券'}}</span>
+                                  <b class="caret" style="float: right;margin-top: 8px;"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li ng-class="{active: !setting.cardId}" ng-click="setting.cardId = undefined">
+                                      <a>不使用卡券</a>
+                                    </li>
+                                    <li ng-repeat="card in eventCards" ng-class="{active: setting.cardId === card.card_id}" ng-click="setting.cardId = card.card_id">
+                                      <a>{{card.base_info.title}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                          </td>
+                          <td>
+                              <textarea rows="10" cols="20" type="text" ng-model="setting.ownerDes" required="" class="form-control" style="height:140px;"></textarea>
+                          </td>
+                          <td>
+                              <textarea rows="10" cols="20" type="text" ng-model="setting.shareDes" required="" class="form-control" style="height:140px;"></textarea>
+                          </td>
+                          <td>
+                            <a href="#" ng-click="removeSettings(event.lotterySettings,setting)" class="btn btn-default btn-xs btn-labeled fa fa-trash" style="margin-top: 8px">删除</a>
+                          </td>
+                        </tr>
+                        <!-- end ngRepeat: setting in lotterySettings-->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="tl-item">
+            <div class="tl-wrap b-primary"><span class="tl-date">第五步</span>
+              <div class="tl-content panel padder b-a block">
+                <div class="panel-heading"><strong>成功提示</strong></div>
+                <div class="panel-body">
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">文案  </label>
+                    <div class="col-sm-6">
+                      <textarea type="text" maxlength="{{maxlength}}"  style="max-width: 100%; min-width: 50%; max-height: 200px;" placeholder="" ng-model="event.tips" required="" class="form-control w-md"></textarea>
+                    </div>
+                    <p style="margin-top:3px; font-size: .8em;" class="col-sm-offset-4 col-sm-6 ">最多可填50个字，还可输入{{maxlength - event.tips.length}}个字。</p>
+                  </div>
+                  <div class="line line-dashed b-b line-lg pull-in"></div>
+                  <strong>失败提示</strong>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">文案</label>
+                    <div class="col-sm-6">
+                      <textarea type="text" maxlength="{{maxlength}}"  style="max-width: 100%; min-width: 50%; max-height: 200px;" placeholder="" ng-model="event.failDes"   class="form-control w-md "></textarea>
+                    </div>
+                    <p style="margin-top:3px; font-size: .8em;" class="col-sm-offset-4 col-sm-6 ">最多可填50个字，还可输入{{maxlength - event.failDes.length}}个字。</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">好友文案</label>
+                    <div class="col-sm-6">
+                      <textarea type="text" maxlength="{{maxlength}}"  style="max-width: 100%; min-width: 50%; max-height: 200px;" placeholder="" ng-model="event.shareFailDes"   class="form-control w-md "></textarea>
+                    </div>
+                    <p style="margin-top:3px; font-size: .8em;" class="col-sm-offset-4 col-sm-6 ">最多可填50个字，还可输入{{maxlength - event.shareFailDes.length}}个字。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="tl-item">
+            <div class="tl-wrap b-primary"><span class="tl-date">第六步</span>
+              <div class="tl-content panel padder b-a block">
+                <div class="panel-heading"><strong>分享设置</strong></div>
+                <!--
+                <div class="panel-body">
+                <div class="form-group">
+                <label class="col-sm-4 control-label">分享功能</label>
+                <div class="col-sm-6">
+                <div class="checkbox">
+                <label class="i-checks">
+                <input type="checkbox" ng-model="event.share.onOff">
+                <i></i>
+                开启
+                </label>
+                </div>
+                </div>
+                </div>
+                -->
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">分享图标</label>
+                  <div class="col-sm-6">
+                    <div class="inline bg-white wrapper-sm b-a shareIcon">
+                      <div class="bg-light">
+                        <img ngf-src="event.share.icon" style="width:50px;">
+                      </div>
+                    </div>
+                    <div class="inline m-b m-l">
+                      <div ngf-select="" ng-model="shareIcon" class="btn btn-default">选择文件</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">分享标题</label>
+                  <div class="col-sm-6">
+                    <input type="text" placeholder="" ng-model="event.share.title" required="" value="" style="" class="form-control w-md"/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">分享内容</label>
+                  <div class="col-sm-6">
+                    <input type="text" placeholder="" ng-model="event.share.des" required="" value="" style="" class="form-control w-md"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="tl-item">
+            <div class="tl-wrap b-primary"><span class="tl-date">第七步</span>
+              <div class="tl-content panel padder b-a block">
+                <footer class="panel-footer text-center bg-light lter">
+                  <button type="submit" ng-disabled="eventForm.$invalid" ng-click="save()" class="btn btn-default">提交</button>
+                </footer>
+              </div>
+            </div>
+          </li>
+          <li class="tl-header">
+            <div class="btn btn-sm btn-default btn-rounded">完成</div>
+          </li>
+        </form>
+      </ul>
+    </div>
+  </div>
+</div>

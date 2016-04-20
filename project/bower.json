@@ -1,10 +1,10 @@
 {
-  "name": "wechat-platform-web",
+  "name": "Angular Demo Project",
   "version": "0.0.1",
   "authors": [
-    "liuxiaodong <liuxiaodong1989@gmail.com>"
+    "YuanXuJia <xuanyuanziruo@gmail.com>"
   ],
-  "description": "SENSORO微信卡券管理平台",
+  "description": "Angular Demo Project",
   "main": "index.html",
   "license": "MIT",
   "ignore": [
