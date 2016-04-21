@@ -3,6 +3,7 @@
 ##学习资料
 *	[thinkster](https://thinkster.io/egghead/resolve) 有视频，有代码，一步一步学习。
 *	[25 Days of Angualr](http://www.ng-newsletter.com/25-days-of-angular)
+*	[Angular Tips](http://www.angular-tips.com/) 非常不错的blog
 ##插件
 *	[Angular Modules](http://ngmodules.org/) 强烈推荐，一切插件尽在掌握中。
 
