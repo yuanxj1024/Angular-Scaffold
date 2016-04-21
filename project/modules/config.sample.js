@@ -1,136 +1,136 @@
 (function(self){
 
-  self.Sensoro = self.Sensoro || {};
+  self.App = self.App || {};
   // BASE API
-  self.Sensoro.API = 'http://qing.mocha.server.sensoro.com/base';
+  self.App.API = 'http://qing.mocha.server.sensoro.com/base';
   // 卡券自助核销入口 url
-  self.Sensoro.CardCustomUrl = 'http://x.mocha.server.sensoro.com/mobile/consumer.html';
+  self.App.CardCustomUrl = 'http://x.mocha.server.sensoro.com/mobile/consumer.html';
   // 微信授权 URL
-  self.Sensoro.authUrl = 'http://qing.mocha.server.sensoro.com/base/wechats/auth';
+  self.App.authUrl = 'http://qing.mocha.server.sensoro.com/base/wechats/auth';
 
     // Report 平台
-  self.Sensoro.REPORTSAPI = 'http://qing.mocha.server.sensoro.com/reports';
+  self.App.REPORTSAPI = 'http://qing.mocha.server.sensoro.com/reports';
   // Manage 平台
-  self.Sensoro.MANAGEAPI = 'https://manage-api.mocha.server.sensoro.com';
+  self.App.MANAGEAPI = 'https://manage-api.mocha.server.sensoro.com';
   // Cloud 平台
-  self.Sensoro.CLOUDAPI = 'https://cloud-api.mocha.server.sensoro.com';
+  self.App.CLOUDAPI = 'https://cloud-api.mocha.server.sensoro.com';
   // 计费平台
-  self.Sensoro.ChargAPI = 'http://qing.mocha.server.sensoro.com/chargs';
+  self.App.ChargAPI = 'http://qing.mocha.server.sensoro.com/chargs';
 
   // 海报卡劵
-  self.Sensoro.LOTTERY = {
+  self.App.LOTTERY = {
     api: 'http://qing.mocha.server.sensoro.com/app/lottery',
   };
 
   // 菜单
-  self.Sensoro.MENUS = {
+  self.App.MENUS = {
     api: 'http://qing.mocha.server.sensoro.com/app/menu',
     logo_default:'http://qing.mocha.server.sensoro.com/img/logo_default.jpg',
   };
 
   // 图文
-  self.Sensoro.ARTICLES = {
+  self.App.ARTICLES = {
     api: 'http://qing.mocha.server.sensoro.com/app/article',
   };
 
   // 摇一摇关注
-  self.Sensoro.FOLLOWS = {
+  self.App.FOLLOWS = {
     api: 'http://qing.mocha.server.sensoro.com/app/follow',
   };
 
   // 调查问卷
-  self.Sensoro.SURVEYS = {
+  self.App.SURVEYS = {
       api:'http://qing.mocha.server.sensoro.com/app/survey'
   };
 
   // 聊天室
-  self.Sensoro.CHATS = {
+  self.App.CHATS = {
     api: 'http://qing.mocha.server.sensoro.com/app/chat',
   };
 
   // 广告栏
-  self.Sensoro.ADCOLUMNS = {
+  self.App.ADCOLUMNS = {
     api: 'http://qing.mocha.server.sensoro.com/app/adcolumn',
   };
 
   //百宝箱
-  self.Sensoro.BOXS = {
+  self.App.BOXS = {
     api:'http://qing.mocha.server.sensoro.com/app/box',
     logo_default:'http://qing.mocha.server.sensoro.com/img/logo_default.jpg',
   };
 
   //刷脸
-  self.Sensoro.FACE = {
+  self.App.FACE = {
     api:'http://qing.mocha.server.sensoro.com/app/face',
   };
 
   //刮刮卡
-  self.Sensoro.SCRATCH = {
+  self.App.SCRATCH = {
     api:'http://qing.mocha.server.sensoro.com/app/scratch',
   };
 
   //签到
-  self.Sensoro.STAMPS = {
+  self.App.STAMPS = {
       api: 'http://qing.mocha.server.sensoro.com/app/stamp',
   };
 
   //投票
-  self.Sensoro.VOTE = {
+  self.App.VOTE = {
       api: 'http://qing.mocha.server.sensoro.com/app/vote',
   };
 
   //圣诞
-  self.Sensoro.XMAS = {
+  self.App.XMAS = {
       api: 'http://qing.mocha.server.sensoro.com/app/xmas',
   };
 
   //nine
-  self.Sensoro.NINE = {
+  self.App.NINE = {
     api: 'http://qing.mocha.server.sensoro.com/app/nine',
   };
 
   //摇红包
-  self.Sensoro.SHAKEHB = {
+  self.App.SHAKEHB = {
       api: 'http://qing.mocha.server.sensoro.com/app/shakehb',
   };
 
   //导览
-  self.Sensoro.GUIDE = {
+  self.App.GUIDE = {
       api: 'http://qing.mocha.server.sensoro.com/app/guide',
   };
 
   //摇红包
-  self.Sensoro.CHUN = {
+  self.App.CHUN = {
       api: 'http://qing.mocha.server.sensoro.com/app/chun',
   };
 
   //疯狂摇一摇
-  self.Sensoro.SHAKE = {
+  self.App.SHAKE = {
       api: 'http://qing.mocha.server.sensoro.com/app/shake',
   };
 
   //九公格
-  self.Sensoro.NINE = {
+  self.App.NINE = {
       api: 'http://qing.mocha.server.sensoro.com/app/nine',
   };
 
   //大转盘
-  self.Sensoro.ROTATE = {
+  self.App.ROTATE = {
       api: 'http://qing.mocha.server.sensoro.com/app/rotate',
   };
 
   //买单
-  self.Sensoro.MAIDAN = {
+  self.App.MAIDAN = {
     api: 'http://qing.mocha.server.sensoro.com/app/maidan/events/',
     views: 'http://qing.mocha.server.sensoro.com/app/maidan/views/'
   };
 
   //CODE
-  self.Sensoro.CODE = {
+  self.App.CODE = {
     api: 'http://qing.mocha.server.sensoro.com/app/code'
-  }
+  };
 
   // 批量创建店铺的标准模板
-  self.Sensoro.SHOP_STANDARD_EXCEL_URL = 'http://7xool2.com1.z0.glb.clouddn.com/%E9%97%A8%E5%BA%97%E6%89%B9%E9%87%8F%E4%B8%8A%E4%BC%A0%E6%A8%A1%E6%9D%BF.xlsx';
+  self.App.SHOP_STANDARD_EXCEL_URL = 'http://7xool2.com1.z0.glb.clouddn.com/%E9%97%A8%E5%BA%97%E6%89%B9%E9%87%8F%E4%B8%8A%E4%BC%A0%E6%A8%A1%E6%9D%BF.xlsx';
 
 })(window);

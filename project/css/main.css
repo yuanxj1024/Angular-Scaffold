@@ -1,0 +1,205 @@
+.flex-center{
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	display: box;
+	box-pack: center;
+	box-align: center;	
+}
+.flex-v-center{
+	display: -webkit-box;
+	-webkit-box-align: center;
+	display: box;
+	box-align: center;	
+}
+.flex-h-center{
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	display: box;
+	box-pack: center;
+}
+
+.shade-disabled:before{
+	content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background: rgba(208, 200, 204, 0.5);
+  cursor: no-drop;
+}
+
+.text-error {
+  color: red;
+}
+
+.img-uploading {
+	position: relative;
+}
+
+.img-uploading:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;	
+	background-image: url(../img/img_loading.gif);
+    background-size: 300%;
+    background-position: center;
+}
+
+.hide-border {
+  border: 0;
+  background-color: #fff !important;
+}
+
+/** 成功提示小弹出框的淡出动画 **/
+@keyframes out {
+  0% {
+    top: 40%;
+    opacity: 0;
+  }
+  30% {
+    top: 45%;
+    opacity: 1;
+  }
+  70% {
+    top: 45%;
+    opacity: 1;
+  }
+  100% {
+    top: 50%;
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes out { /* Firefox */
+  0% {
+    top: 40%;
+    opacity: 0;
+  }
+  30% {
+    top: 45%;
+    opacity: 1;
+  }
+  70% {
+    top: 45%;
+    opacity: 1;
+  }
+  100% {
+    top: 50%;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes out{ /* Safari 和 Chrome */
+  0% {
+    top: 40%;
+    opacity: 0;
+  }
+  30% {
+    top: 45%;
+    opacity: 1;
+  }
+  70% {
+    top: 45%;
+    opacity: 1;
+  }
+  100% {
+    top: 50%;
+    opacity: 0;
+  }
+}
+
+@-o-keyframes out{ /* Opera */
+  0% {
+    top: 40%;
+    opacity: 0;
+  }
+  30% {
+    top: 45%;
+    opacity: 1;
+  }
+  70% {
+    top: 45%;
+    opacity: 1;
+  }
+  100% {
+    top: 50%;
+    opacity: 0;
+  }
+}
+
+.input-error {
+	padding-top: 1px;
+  display: block;
+  color: red;
+  font-size: 12px;
+}
+
+
+.card-len-error {
+	min-height: 1px;
+	margin-top: -15px;
+  display: block;
+  color: red;
+  font-size: 12px;
+}
+
+.card-color {
+	width: 230px;
+}
+
+.card-color ul{
+	width: 200px;
+	margin-left: 15px;
+	padding-bottom: 5px;
+	height: auto;
+}
+
+.card-color ul li{
+	float: left;
+}
+
+.card-color a{
+	display: block;
+	height: 22px;
+	width: 22px;
+	margin-top: 4px;
+	margin-left: 5px;
+}
+
+.card-color label a.active{
+    float: left;
+    margin: -1px 0 0px -7px;
+}
+
+.card-color label i{
+	float: right;
+}
+
+.ui-select-bootstrap>.ui-select-choices {
+  z-index: 10000;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+tr.rescind {
+  background: #eee;
+}
+
+.grants-apps label{
+  margin-left: 0 !important;
+  margin-right: 10px;
+}
+
+/*ppt*/
+.sigma-tooltip{
+    z-index: 1000;
+}

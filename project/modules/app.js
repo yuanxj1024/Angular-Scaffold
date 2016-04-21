@@ -1,6 +1,6 @@
 'use strict';
 
-(function(angular, Sensoro, undefined){
+(function(angular, App, undefined){
   var app = angular.module('wechat-platform', [
     'ngAnimate',
     'ngCookies',
@@ -20,34 +20,34 @@
     'ui.select',
     'angularAwesomeSlider'
   ]);
-  app.constant('API', Sensoro.API);
-  app.constant('CardCustomUrl', Sensoro.CardCustomUrl);
-  app.constant('ChargAPI', Sensoro.ChargAPI);
-  app.constant('REPORTSAPI', Sensoro.REPORTSAPI);
-  app.constant('AuthUrl', Sensoro.authUrl);
-  app.constant('MENUS', Sensoro.MENUS);
-  app.constant('LOTTERY', Sensoro.LOTTERY);
-  app.constant('SCRATCH', Sensoro.SCRATCH);
-  app.constant('XMAS', Sensoro.XMAS);
-  app.constant('NINE', Sensoro.NINE);
-  app.constant('ROTATE', Sensoro.ROTATE);
-  app.constant('FACE', Sensoro.FACE);
-  app.constant('STAMPS', Sensoro.STAMPS);
-  app.constant('ADCOLUMNS', Sensoro.ADCOLUMNS);
-  app.constant('ARTICLES', Sensoro.ARTICLES);
-  app.constant('FOLLOWS', Sensoro.FOLLOWS);
-  app.constant('BOXS', Sensoro.BOXS);
-  app.constant('CHATS', Sensoro.CHATS);
-  app.constant('SURVEYS', Sensoro.SURVEYS);
-  app.constant('GUIDE', Sensoro.GUIDE);
-  app.constant('CLOUDAPI', Sensoro.CLOUDAPI);
-  app.constant('MANAGEAPI', Sensoro.MANAGEAPI);
-  app.constant('SHAKEHB', Sensoro.SHAKEHB);
-  app.constant('SHOP_STANDARD_EXCEL_URL', Sensoro.SHOP_STANDARD_EXCEL_URL);
-  app.constant('VOTE', Sensoro.VOTE);
-  app.constant('CHUN', Sensoro.CHUN);
-  app.constant('SHAKE', Sensoro.SHAKE);
-  app.constant('MAIDAN', Sensoro.MAIDAN);
-  app.constant('CODE', Sensoro.CODE);
-})(angular, Sensoro);
+  app.constant('API', App.API);
+  app.constant('CardCustomUrl', App.CardCustomUrl);
+  app.constant('ChargAPI', App.ChargAPI);
+  app.constant('REPORTSAPI', App.REPORTSAPI);
+  app.constant('AuthUrl', App.authUrl);
+  app.constant('MENUS', App.MENUS);
+  app.constant('LOTTERY', App.LOTTERY);
+  app.constant('SCRATCH', App.SCRATCH);
+  app.constant('XMAS', App.XMAS);
+  app.constant('NINE', App.NINE);
+  app.constant('ROTATE', App.ROTATE);
+  app.constant('FACE', App.FACE);
+  app.constant('STAMPS', App.STAMPS);
+  app.constant('ADCOLUMNS', App.ADCOLUMNS);
+  app.constant('ARTICLES', App.ARTICLES);
+  app.constant('FOLLOWS', App.FOLLOWS);
+  app.constant('BOXS', App.BOXS);
+  app.constant('CHATS', App.CHATS);
+  app.constant('SURVEYS', App.SURVEYS);
+  app.constant('GUIDE', App.GUIDE);
+  app.constant('CLOUDAPI', App.CLOUDAPI);
+  app.constant('MANAGEAPI', App.MANAGEAPI);
+  app.constant('SHAKEHB', App.SHAKEHB);
+  app.constant('SHOP_STANDARD_EXCEL_URL', App.SHOP_STANDARD_EXCEL_URL);
+  app.constant('VOTE', App.VOTE);
+  app.constant('CHUN', App.CHUN);
+  app.constant('SHAKE', App.SHAKE);
+  app.constant('MAIDAN', App.MAIDAN);
+  app.constant('CODE', App.CODE);
+})(angular, (App || App = {});
 
