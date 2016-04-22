@@ -1,24 +1,12 @@
 'use strict';
 
 (function(angular, App, undefined){
-  var app = angular.module('wechat-platform', [
+  var app = angular.module('angualrScaffold', [
     'ngAnimate',
     'ngCookies',
     'ui.router',
     'oc.lazyLoad',
-    'ui.bootstrap',
-    'I18N',
-    'brantwills.paging',
-    'ngFileReader',
-    'ngFileUpload',
-    'ngClipboard',
-    'ngTagsInput',
-    'htmlSortable',
-    'ngSanitize',
-    'summernote',
-    'chart.js',
-    'ui.select',
-    'angularAwesomeSlider'
+    'ui.bootstrap'
   ]);
   app.constant('API', App.API);
   app.constant('CardCustomUrl', App.CardCustomUrl);
@@ -49,5 +37,5 @@
   app.constant('SHAKE', App.SHAKE);
   app.constant('MAIDAN', App.MAIDAN);
   app.constant('CODE', App.CODE);
-})(angular, (App || App = {});
+})(angular, App);
 

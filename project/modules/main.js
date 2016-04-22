@@ -2,11 +2,11 @@
 
 /* Controllers */
 
-angular.module('wechat-platform').controller('AppCtrl', function($scope, $window, $filter, $q, $timeout) {
+angular.module('angualrScaffold').controller('AppCtrl', function($scope, $window, $filter, $q, $timeout) {
   // add 'ie' classes to html
   var isIE = !!navigator.userAgent.match(/MSIE/i);
-  if(isIE) angular.element($window.document.body).addClass('ie');
-  if(isSmartDevice( $window )) angular.element($window.document.body).addClass('smart');
+  if (isIE) angular.element($window.document.body).addClass('ie');
+  if (isSmartDevice($window)) angular.element($window.document.body).addClass('smart');
 
   // config
   $scope.settings = {
@@ -24,16 +24,16 @@ angular.module('wechat-platform').controller('AppCtrl', function($scope, $window
   };
 
 
-  function isSmartDevice( $window ) {
+  function isSmartDevice($window) {
     // Adapted from http://www.detectmobilebrowsers.com
     var ua = $window.navigator.userAgent || $window.navigator.vendor || $window.opera;
     // Checks for iOs, Android, Blackberry, Opera Mini, and Windows mobile devices
     return (/iPhone|iPod|iPad|Silk|Android|BlackBerry|Opera Mini|IEMobile/).test(ua);
   }
 
-  $scope.alert = function(msg, title){
-    if(angular.element('.modal-backdrop').length){
-      return $timeout(function (){
+  $scope.alert = function(msg, title) {
+    if (angular.element('.modal-backdrop').length) {
+      return $timeout(function() {
         $scope.alert(msg, title);
       }, 200);
     }
@@ -45,9 +45,9 @@ angular.module('wechat-platform').controller('AppCtrl', function($scope, $window
     angular.element('#showDialogModal').click();
   };
 
-  $scope.confirm = function(msg, title, checkboxMsg){
-    if(angular.element('.modal-backdrop').length) {
-      return $timeout(function (){
+  $scope.confirm = function(msg, title, checkboxMsg) {
+    if (angular.element('.modal-backdrop').length) {
+      return $timeout(function() {
         $scope.confirm(msg, title);
       }, 200);
     }
@@ -62,16 +62,18 @@ angular.module('wechat-platform').controller('AppCtrl', function($scope, $window
     var confirm_flag = false;
     var deferred = $q.defer();
 
-    var confirm = function(){
+    var confirm = function() {
       confirm_flag = true;
       angular.element('#spDialog .close').click();
       angular.element('#spDialog #dialogConfirmBtn').unbind('click', confirm);
       angular.element('#spDialog').unbind('hide.bs.modal', cancel);
-      return deferred.resolve({checkbox: $scope.dialogData.checkbox});
+      return deferred.resolve({
+        checkbox: $scope.dialogData.checkbox
+      });
     };
 
-    var cancel = function(){
-      if(!confirm_flag){
+    var cancel = function() {
+      if (!confirm_flag) {
         angular.element('#spDialog #dialogConfirmBtn').unbind('click', confirm);
         angular.element('#spDialog').unbind('hide.bs.modal', cancel);
         return deferred.reject();
@@ -88,9 +90,9 @@ angular.module('wechat-platform').controller('AppCtrl', function($scope, $window
     theme: 'future'
   };
 
-  $scope.notice = function(msg){
+  $scope.notice = function(msg) {
 
-    var time = msg.length/5;
+    var time = msg.length / 5;
     if (time > 5) {
       time = 5;
     } else if (time < 1) {
@@ -98,7 +100,7 @@ angular.module('wechat-platform').controller('AppCtrl', function($scope, $window
     }
 
     new Messenger().post({
-      message:msg,
+      message: msg,
       showCloseButton: true,
       id: 'Only-one-message',
       hideAfter: time,
@@ -118,94 +120,6 @@ angular.module('wechat-platform').controller('AppCtrl', function($scope, $window
     face: {
       name: '颜值测评',
       cname: 'face'
-    },
-    menu: {
-      name: '菜单',
-      cname: 'menu'
-    },
-    adcolumn: {
-      name: '广告栏',
-      cname: 'adcolumn'
-    },
-    chat: {
-      name: '聊天室',
-      cname: 'chat'
-    },
-    survey: {
-      name: '调查问卷',
-      cname: 'survey'
-    },
-    stamp: {
-      name: '签到',
-      cname: 'stamp'
-    },
-    shake: {
-      name: '疯狂摇一摇',
-      cname: 'shake'
-    },
-    box: {
-      name: '百宝箱',
-      cname: 'box'
-    },
-    scratch: {
-      name: '刮刮卡',
-      cname: 'scratch'
-    },
-    nine: {
-      name: '九宫格',
-      cname: 'nine'
-    },
-    rotate: {
-      name: '大转盘',
-      cname: 'rotate'
-    },
-    vote: {
-      name: '产品投票',
-      cname: 'vote'
-    },
-    article: {
-      name: '图文',
-      cname: 'article'
-    },
-    follow: {
-      name: '摇一摇关注',
-      cname: 'follow'
-    },
-    lottery: {
-      name: '海报卡劵',
-      cname: 'lottery'
-    },
-    xmas: {
-      name: '圣诞',
-      cname: 'xmas'
-    },
-    shakehb: {
-      name: '红包',
-      cname: 'shakehb'
-    },
-    guide: {
-      name: '导览',
-      cname: 'guide'
-    },
-    chun: {
-      name: '春节',
-      cname: 'chun'
-    },
-    maidan: {
-      name: '买单',
-      cname: 'maidan'
-    },
-    discover: {
-      name: '寻宝',
-      cname: 'discover'
-    },
-    code: {
-      name: 'Code',
-      cname: 'code'
-    },
-    parking: {
-      name: '停车场',
-      cname: 'parking'
     }
   };
 
@@ -220,27 +134,27 @@ angular.module('wechat-platform').controller('AppCtrl', function($scope, $window
     cashReg: /^0\.0[1-9](\d+)?$|^0\.[1-9]{1}(\d+)?$|^[1-9](\d+)?\.\d+$|^[1-9](\d+)?$/
   };
 
-  $scope.characterCount = function(str){
-    if(!str) return 0;
+  $scope.characterCount = function(str) {
+    if (!str) return 0;
     var _len = str.replace(/[^\x00-\xff]/ig, 'xx').length;
     return Math.ceil(_len / 2);
   };
 
   // 校验文本的长度
   // 一个中文字符 === 2个英文字符
-  $scope.minLength = function(str, len, required){
-    if(!str) return !required;
+  $scope.minLength = function(str, len, required) {
+    if (!str) return !required;
     var _len = str.replace(/[^\x00-\xff]/ig, 'xx').length;
-    if(_len > len) return false;
+    if (_len > len) return false;
     return true;
   };
 
   // 校验文本的长度
   // 一个中文字符 === 2个英文字符
-  $scope.maxLength = function(str, len, required){
-    if(!str) return !required;
+  $scope.maxLength = function(str, len, required) {
+    if (!str) return !required;
     var _len = str.replace(/[^\x00-\xff]/ig, 'xx').length;
-    if(_len >= len) return true;
+    if (_len >= len) return true;
     return false;
   };
 
@@ -248,30 +162,30 @@ angular.module('wechat-platform').controller('AppCtrl', function($scope, $window
     return angular.isNumber(arg);
   };
 
-}).controller('NavCtrl', function($rootScope, $location, $filter, $timeout){
+}).controller('NavCtrl', function($rootScope, $location, $filter, $timeout) {
   $timeout(locationChangeSuccess, 100);
 
   $rootScope.$on('$locationChangeSuccess', locationChangeSuccess);
 
-  function locationChangeSuccess(){
+  function locationChangeSuccess() {
     angular.element('.modal-backdrop').remove();
     angular.element('body').removeClass('modal-open');
     var path = $location.path();
     var state = _.compact(path.split('/')).join('.');
     var navi = angular.element('nav.navi ul.nav li');
     navi.removeClass('active');
-    var setActive = function (str){
-      var el = _.find(navi, function(item){
-        return (item.children && item.children[0] &&  item.children[0].getAttribute && item.children[0].getAttribute('ui-sref') === str);
+    var setActive = function(str) {
+      var el = _.find(navi, function(item) {
+        return (item.children && item.children[0] && item.children[0].getAttribute && item.children[0].getAttribute('ui-sref') === str);
       });
       var arr = str.split('.');
 
-      if(_.last(arr) === 'wechat' || _.last(arr) === 'manage') {
+      if (_.last(arr) === 'wechat' || _.last(arr) === 'manage') {
         angular.element(el).parent().parent().addClass('active');
       }
-      if(el) {
+      if (el) {
         angular.element(el).addClass('active');
-      }else if(arr.length > 1){
+      } else if (arr.length > 1) {
         setActive(_.initial(arr).join('.'));
       }
     };
@@ -279,10 +193,10 @@ angular.module('wechat-platform').controller('AppCtrl', function($scope, $window
     changePageTitle(state);
   }
 
-  function changePageTitle(state){
-    if(state) {
+  function changePageTitle(state) {
+    if (state) {
       var title = $filter('translate')('pagetitle.' + state);
-      if(title && title !== 'pagetitle.' + state) {
+      if (title && title !== 'pagetitle.' + state) {
         //angular.element('head title').text(title);
       }
     }

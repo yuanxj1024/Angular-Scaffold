@@ -23,7 +23,7 @@ angular.module('wechat-platform').config(function ($stateProvider, $urlRouterPro
     }
     $stateProvider.state(path, config);
   });
-  $locationProvider.html5Mode(true);
+  // $locationProvider.html5Mode(true);
 
 }).run(function ($rootScope, $location) {
     /**
