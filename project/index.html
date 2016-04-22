@@ -6,38 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <title>Angular Demo Project</title>
     <base href="/">
-
     <!-- build:css css/main.min.css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
-    <link rel="stylesheet" href="bower_components/datetimepicker/jquery.datetimepicker.css">
-    <link rel="stylesheet" href="bower_components/messenger/build/css/messenger.css">
-    <link rel="stylesheet" href="bower_components/messenger/build/css/messenger-theme-future.css">
-    <link rel="stylesheet" href="bower_components/summernote/dist/summernote.css">
-    <link rel="stylesheet" href="bower_components/angular-awesome-slider/dist/css/angular-awesome-slider.min.css">
-
-    <link rel="stylesheet" href="components/lib/angular-ui-select/select.min.css">
-
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/simple-line-icons.css">
-    <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/lib/normalize.css">
-    <link rel="stylesheet" href="css/lib/ns-default.css">
-    <link rel="stylesheet" href="css/lib/ns-style-growl.css">
-    <link rel="stylesheet" href="css/error-alert.css">
-    <link rel="stylesheet" href="css/utils.css">
-    <!-- tags input-->
-    <link rel="stylesheet" href="bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/ng-tags-input/ng-tags-input.min.css">
     <!-- endbuild -->
-
     <link href="img/favicon.ico" rel="Shortcut Icon">
-
     <!-- In-document CSS -->
 
     <!--[if lt IE 8]>
@@ -65,19 +38,6 @@
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/lodash/lodash.min.js"></script>
-    <script src="bower_components/Chart.js/Chart.min.js"></script>
-    <script src="bower_components/datetimepicker/jquery.datetimepicker.js"></script>
-    <script src="bower_components/async/dist/async.min.js"></script>
-    <!-- show qrcode -->
-    <script src="bower_components/jquery.qrcode/dist/jquery.qrcode.min.js"></script>
-    <script src="bower_components/moment/min/moment.min.js"></script>
-
-    <!-- scripts -->
-    <script src="bower_components/messenger/build/js/messenger.min.js"></script>
-    <script src="bower_components/summernote/dist/summernote.min.js"></script>
-    <script src="bower_components/summernote/lang/summernote-zh-CN.js"></script>
-    <script src="bower_components/mustache.js/mustache.min.js"></script>
-    <script src="bower_components/crossfilter2/crossfilter.min.js"></script>
     <!-- endbuild -->
 
     <!-- build:angular js/angular.js -->
@@ -86,70 +46,19 @@
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
     <script src="bower_components/ocLazyLoad/dist/ocLazyLoad.min.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="bower_components/angular-translate/angular-translate.min.js"></script>
     <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js"></script>
     <script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.min.js"></script>
-    <script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
-    <script src="bower_components/angular-awesome-slider/dist/angular-awesome-slider.min.js"></script>
     <script src="bower_components/crossfilter2/crossfilter.min.js"></script>
-    <!-- menus start-->
-    <!-- upload file start-->
-    <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
-    <script src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
-    <!-- excel huayun -->
-    <script src="bower_components/js-xlsx/dist/xlsx.core.min.js"></script>
-    <!-- file-saver.js huayun -->
-    <script src="bower_components/file-saver.js/FileSaver.js"></script>
-    <!-- menus end-->
-    <script src="bower_components/html.sortable/dist/html.sortable.min.js"></script>
-    <script src="bower_components/html.sortable/dist/html.sortable.angular.js"></script>
     <!-- endbuild -->
 
     <!-- build:app js/app.min.js -->
-    <!-- clipboard-->
-    <script src="bower_components/zeroclipboard/dist/ZeroClipboard.min.js"></script>
-    <script src="bower_components/ng-clip/src/ngClip.js"></script>
-    <script src="bower_components/ngFileReader/src/ngFileReader.min.js"></script>
-    <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
-    <!-- tags input-->
-    <script src="bower_components/ng-tags-input/ng-tags-input.min.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-summernote/dist/angular-summernote.min.js"></script>
-    <script src="components/lib/angular-ui-select/select.min.js"></script>
-    <script src="components/lib/Angular-Paging/paging.js"></script>
-
-    <script src="components/lib/modernizr.custom.js"></script>
-    <script src="components/lib/classie.js"></script>
-    <script src="components/lib/notificationFx.js"></script>
-    <script src="components/i18n/zh-cn.json.js"></script>
-    <script src="components/i18n/zh-tw.json.js"></script>
-    <script src="components/i18n/en.json.js"></script>
-    <script src="components/i18n/i18n.js"></script>
-
     <script src="modules/config.js"></script>
     <script src="modules/app.js"></script>
     <script src="components/routers/base.js"></script>
     <script src="components/routers/appstore.js"></script>
     <script src="modules/router.js"></script>
     <script src="modules/main.js"></script>
-
-    <script src="components/filters/utils.js"></script>
-    <script src="components/services/ui-load.js"></script>
-    <script src="components/services/utils.js"></script>
-    <script src="components/services/auth_handler.js"></script>
-    <script src="components/services/error_handler.js"></script>
-    <script src="components/directives/particles.js"></script>
-    <script src="components/directives/ui-butterbar.js"></script>
-    <script src="components/directives/ui-jq.js"></script>
-    <script src="components/directives/ui-fullscreen.js"></script>
-    <script src="components/directives/ui-toggleclass.js"></script>
-    <script src="components/directives/ui-scroll.js"></script>
-    <script src="components/directives/ui-nav.js"></script>
-    <script src="components/directives/utils.js"></script>
-    <script src="components/directives/page-render.js"></script>
-	<script src="components/directives/beacon-select.js"></script>
-    <script src="components/lib/wxgeo.js"></script>
     <!-- endbuild -->
   </body>
 </html>

@@ -4,3 +4,21 @@
 
 考虑到业务模块比较多，并且引用了jQuery库，还要考虑性能问题，所以gulp打包优先压缩合并首页首屏模块，使用ocLazyLoad配合路由加载对应View的JS,CSS.
 
+
+`用到的插件`
+
+* angular-chart
+* angular-awesome-slider
+* angular-ui-select
+* ng-tags-input
+* ng-file-upload
+* ngClip
+* ngFileReader
+* angularPaging
+
+
+
+* jquery.qrcode
+* file-saver
+* <html class="sortable"></html>
+* ZeroClipboard
